@@ -1,3 +1,3 @@
-## Cathy AI Discord Chat Bot
+## Alaister.net Intelligence
 
-Artificial intelligence (AI) chat bot for Discord written in Python
+Powered by Cathy, an artificial intelligence Discord chatbot written in Python 3

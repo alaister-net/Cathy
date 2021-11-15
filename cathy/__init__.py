@@ -1,6 +1,6 @@
 import aiml
-from datetime import datetime, timedelta
-import discord
+from datetime import datetime
+import disnake
 import os
 import pkg_resources
 import logging
@@ -59,7 +59,7 @@ class Cathy:
 
         # Set up Discord
         logging.info("[*] Initializing Discord bot...")
-        self.discord_bot = discord.AutoShardedClient()
+        self.discord_bot = disnake.AutoShardedClient()
         self.setup_discord_events()
         logging.info("[+] Done initializing Discord bot.")
         logging.info("[+] Exiting __init__ function.")
@@ -80,7 +80,7 @@ class Cathy:
         self.aiml_kernel.setBotPredicate("arch", "Linux 4.19.0-18-amd64")
         self.aiml_kernel.setBotPredicate("botmaster", "creator")
         self.aiml_kernel.setBotPredicate("boyfriend", "I am male and not gay")
-        self.aiml_kernel.setBotPredicate("build", "Cathy 4.0.0")
+        self.aiml_kernel.setBotPredicate("build", "Cathy 4.0.1")
         self.aiml_kernel.setBotPredicate("celebrities", "MrBeast, Dream")
         self.aiml_kernel.setBotPredicate("celebrity", "MrBeast")
         self.aiml_kernel.setBotPredicate("email", "contact@alaister.net")
@@ -99,7 +99,7 @@ class Cathy:
         self.aiml_kernel.setBotPredicate("memory", "1GB")
         self.aiml_kernel.setBotPredicate("os", "Debian Buster")
         self.aiml_kernel.setBotPredicate("question", "Do you like our free hosting services?")
-        self.aiml_kernel.setBotPredicate("version", "Cathy 4.0.0")
+        self.aiml_kernel.setBotPredicate("version", "Cathy 4.0.1")
         self.aiml_kernel.setBotPredicate("website", "Alaister.net")
         ####################   CONFIG ENDS   ####################
         
@@ -147,11 +147,11 @@ class Cathy:
                 now = datetime.now()
                 self.insert_chat_log(now, message, aiml_response)
 
-                embed = discord.Embed(description=aiml_response, color=discord.Color.orange())
-                embed.set_author(name=f'{message.author.name}#{message.author.discriminator}', icon_url=str(message.author.avatar_url))
+                embed = disnake.Embed(description=aiml_response, color=disnake.Color.orange())
+                embed.set_author(name=f'{message.author.name}#{message.author.discriminator}', icon_url=message.author.display_avatar.url)
                 await message.channel.send(embed=embed)
 
-            except discord.HTTPException as e:
+            except disnake.HTTPException as e:
                 logging.error("[-] Discord HTTP Error: %s" % e)
             except Exception as e:
                 logging.error("[-] General Error: %s" % e)
