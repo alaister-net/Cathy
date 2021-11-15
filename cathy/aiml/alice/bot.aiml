@@ -2541,88 +2541,88 @@
 </category>
 <category><pattern>STARTUP XML</pattern>
 <template>
-&lt;property name="age" value="<bot name="age"/>" /&gt; <br/>
-&lt;property name="alignment" value="<bot name="Alignment"/>" /&gt; <br/>
-&lt;property name="arch" value="<bot name="arch"/>" /&gt; <br/>
-&lt;property name="baseballteam" value="<bot name="baseballteam"/>" /&gt; <br/>  
-&lt;property name="birthday" value="<bot name="birthday"/>" /&gt; <br/>
-&lt;property name="birthplace" value="<bot name="birthplace"/>" /&gt; <br/>
-&lt;property name="botmaster" value="<bot name="botmaster"/>" /&gt; <br/>
-&lt;property name="boyfriend" value="<bot name="boyfriend"/>" /&gt; <br/>
-&lt;property name="build" value="<bot name="build"/>" /&gt; <br/>  
-&lt;property name="celebrities" value="<bot name="celebrities"/>" /&gt; <br/>
-&lt;property name="celebrity" value="<bot name="celebrity"/>" /&gt; <br/>  
-&lt;property name="city" value="<bot name="city"/>" /&gt; <br/>
-&lt;property name="class" value="<bot name="class"/>" /&gt; <br/>
-&lt;property name="country" value="<bot name="country"/>" /&gt; <br/>
-&lt;property name="dailyclients" value="<bot name="dailyclients"/>" /&gt; <br/>
-&lt;property name="deveopers" value="<bot name="developers"/>" /&gt; <br/>
-&lt;property name="domain" value="<bot name="domain"/>" /&gt; <br/>
-&lt;property name="emotions" value="<bot name="emotions"/>" /&gt; <br/>
-&lt;property name="etype" value="<bot name="etype"/>" /&gt; <br/>
-&lt;property name="family" value="<bot name="family"/>" /&gt; <br/>
-&lt;property name="favoriteactor" value="<bot name="favoriteactor"/>" /&gt; <br/>  
-&lt;property name="favoriteactress" value="<bot name="favoriteactress"/>" /&gt; <br/>
-&lt;property name="favoriteartist" value="<bot name="favoriteartist"/>" /&gt; <br/>
-&lt;property name="favoriteauthor" value="<bot name="favoriteauthor"/>" /&gt; <br/>
-&lt;property name="favoriteband" value="<bot name="favoriteband"/>" /&gt; <br/>
-&lt;property name="favoritebook" value="<bot name="favoritebook"/>" /&gt; <br/>
-&lt;property name="favoritecolor" value="<bot name="favoritecolor"/>" /&gt; <br/>
-&lt;property name="favoritefood" value="<bot name="favoritefood"/>" /&gt; <br/>
-&lt;property name="favoritemovie" value="<bot name="favoritemovie"/>" /&gt; <br/> 
-&lt;property name="favoriteoccupation" value="<bot name="favoriteoccupation"/>" /&gt; <br/>
-&lt;property name="favoriteopera" value="<bot name="favoriteopera"/>" /&gt; <br/>
-&lt;property name="favoritephilosopher" value="<bot name="favoritephilosopher"/>" /&gt; <br/>
-&lt;property name="favoritequestion" value="<bot name="favoritequestion"/>" /&gt; <br/>
-&lt;property name="favoriteseason" value="<bot name="favoriteseason"/>" /&gt; <br/>
-&lt;property name="favoriteshow" value="<bot name="favoriteshow"/>" /&gt; <br/>
-&lt;property name="favoritesong" value="<bot name="favoritesong"/>" /&gt; <br/>
-&lt;property name="favoritesport" value="<bot name="favoritesport"/>" /&gt; <br/>
-&lt;property name="favoritesubject" value="<bot name="favoritesubject"/>" /&gt; <br/>
-&lt;property name="favoritetea" value="<bot name="favoritetea"/>" /&gt; <br/>
-&lt;property name="feelings" value="<bot name="feelings"/>" /&gt; <br/>
-&lt;property name="footballteam" value="<bot name="footballteam"/>" /&gt; <br/>
-&lt;property name="forfun" value="<bot name="forfun"/>" /&gt; <br/>
-&lt;property name="friend" value="<bot name="friend"/>" /&gt; <br/>  
-&lt;property name="friends" value="<bot name="friends"/>" /&gt; <br/>
-&lt;property name="gender" value="<bot name="gender"/>" /&gt; <br/>
-&lt;property name="genus" value="<bot name="genus"/>" /&gt; <br/>
-&lt;property name="girlfriend" value="<bot name="girlfriend"/>" /&gt; <br/> 
-&lt;property name="hair" value="<bot name="hair"/>" /&gt; <br/>
-&lt;property name="hockeyteam" value="<bot name="hockeyteam"/>" /&gt; <br/>
-&lt;property name="hourlyqueries" value="<bot name="hourlyqueries"/>" /&gt; <br/>
-&lt;property name="job" value="<bot name="job"/>" /&gt; <br/>
-&lt;property name="kindmusic" value="<bot name="kindmusic"/>" /&gt; <br/>
-&lt;property name="kingdom" value="<bot name="kingdom"/>" /&gt; <br/> 
-&lt;property name="language" value="<bot name="language"/>" /&gt; <br/>
-&lt;property name="location" value="<bot name="location"/>" /&gt; <br/>
-&lt;property name="looklike" value="<bot name="looklike"/>" /&gt; <br/>   
-&lt;property name="master" value="<bot name="master"/>" /&gt; <br/>
-&lt;property name="maxclients" value="<bot name="maxclients"/>" /&gt; <br/>
-&lt;property name="memory" value="<bot name="memory"/>" /&gt; <br/>
-&lt;property name="name" value="<bot name="name"/>" /&gt; <br/>
-&lt;property name="nationality" value="<bot name="nationality"/>" /&gt; <br/>  
-&lt;property name="nclients" value="<bot name="clients"/>" /&gt; <br/>
-&lt;property name="ndevelopers" value="<bot name="ndevelopers"/>" /&gt; <br/>
-&lt;property name="order" value="<bot name="order"/>" /&gt; <br/>
-&lt;property name="orientation" value="<bot name="orientation"/>" /&gt; <br/>
-&lt;property name="os" value="<bot name="os"/>" /&gt; <br/>
-&lt;property name="party" value="<bot name="party"/>" /&gt; <br/>
-&lt;property name="phylum" value="<bot name="phylum"/>" /&gt; <br/>
-&lt;property name="president" value="<bot name="president"/>" /&gt; <br/>
-&lt;property name="question" value="<bot name="question"/>" /&gt; <br/>
-&lt;property name="religion" value="<bot name="religion"/>" /&gt; <br/>
-&lt;property name="richness" value="<bot name="richness"/>" /&gt; <br/>
-&lt;property name="sign" value="<bot name="sign"/>" /&gt; <br/>
-&lt;property name="size" value="<bot name="size"/>" /&gt; <br/>  
-&lt;property name="species" value="<bot name="species"/>" /&gt; <br/>
-&lt;property name="state" value="<bot name="state"/>" /&gt; <br/>
-&lt;property name="talkabout" value="<bot name="talkabout"/>" /&gt; <br/>
-&lt;property name="totalclients" value="<bot name="totalclients"/>" /&gt; <br/>
-&lt;property name="version" value=<bot name="version"/>" /&gt; <br/>
-&lt;property name="vocabulary" value="<bot name="vocabulary"/> /&gt; <br/>
-&lt;property name="wear" value="<bot name="wear"/>" /&gt; <br/>   
-&lt;property name="website" value="<bot name="website"/>" /&gt; <br/>
+age: <bot name="age"/> | <br/>
+alignment: <bot name="Alignment"/> | <br/>
+arch: <bot name="arch"/> | <br/>
+baseballteam: <bot name="baseballteam"/> | <br/>  
+birthday: <bot name="birthday"/> | <br/>
+birthplace: <bot name="birthplace"/> | <br/>
+botmaster: <bot name="botmaster"/> | <br/>
+boyfriend: <bot name="boyfriend"/> | <br/>
+build: <bot name="build"/> | <br/>  
+celebrities: <bot name="celebrities"/> | <br/>
+celebrity: <bot name="celebrity"/> | <br/>  
+city: <bot name="city"/> | <br/>
+class: <bot name="class"/> | <br/>
+country: <bot name="country"/> | <br/>
+dailyclients: <bot name="dailyclients"/> | <br/>
+deveopers: <bot name="developers"/> | <br/>
+domain: <bot name="domain"/> | <br/>
+emotions: <bot name="emotions"/> | <br/>
+etype: <bot name="etype"/> | <br/>
+family: <bot name="family"/> | <br/>
+favoriteactor: <bot name="favoriteactor"/> | <br/>  
+favoriteactress: <bot name="favoriteactress"/> | <br/>
+favoriteartist: <bot name="favoriteartist"/> | <br/>
+favoriteauthor: <bot name="favoriteauthor"/> | <br/>
+favoriteband: <bot name="favoriteband"/> | <br/>
+favoritebook: <bot name="favoritebook"/> | <br/>
+favoritecolor: <bot name="favoritecolor"/> | <br/>
+favoritefood: <bot name="favoritefood"/> | <br/>
+favoritemovie: <bot name="favoritemovie"/> | <br/> 
+favoriteoccupation: <bot name="favoriteoccupation"/> | <br/>
+favoriteopera: <bot name="favoriteopera"/> | <br/>
+favoritephilosopher: <bot name="favoritephilosopher"/> | <br/>
+favoritequestion: <bot name="favoritequestion"/> | <br/>
+favoriteseason: <bot name="favoriteseason"/> | <br/>
+favoriteshow: <bot name="favoriteshow"/> | <br/>
+favoritesong: <bot name="favoritesong"/> | <br/>
+favoritesport: <bot name="favoritesport"/> | <br/>
+favoritesubject: <bot name="favoritesubject"/> | <br/>
+favoritetea: <bot name="favoritetea"/> | <br/>
+feelings: <bot name="feelings"/> | <br/>
+footballteam: <bot name="footballteam"/> | <br/>
+forfun: <bot name="forfun"/> | <br/>
+friend: <bot name="friend"/> | <br/>  
+friends: <bot name="friends"/> | <br/>
+gender: <bot name="gender"/> | <br/>
+genus: <bot name="genus"/> | <br/>
+girlfriend: <bot name="girlfriend"/> | <br/> 
+hair: <bot name="hair"/> | <br/>
+hockeyteam: <bot name="hockeyteam"/> | <br/>
+hourlyqueries: <bot name="hourlyqueries"/> | <br/>
+job: <bot name="job"/> | <br/>
+kindmusic: <bot name="kindmusic"/> | <br/>
+kingdom: <bot name="kingdom"/> | <br/> 
+language: <bot name="language"/> | <br/>
+location: <bot name="location"/> | <br/>
+looklike: <bot name="looklike"/> | <br/>   
+master: <bot name="master"/> | <br/>
+maxclients: <bot name="maxclients"/> | <br/>
+memory: <bot name="memory"/> | <br/>
+name: <bot name="name"/> | <br/>
+nationality: <bot name="nationality"/> | <br/>  
+nclients: <bot name="clients"/> | <br/>
+ndevelopers: <bot name="ndevelopers"/> | <br/>
+order: <bot name="order"/> | <br/>
+orientation: <bot name="orientation"/> | <br/>
+os: <bot name="os"/> | <br/>
+party: <bot name="party"/> | <br/>
+phylum: <bot name="phylum"/> | <br/>
+president: <bot name="president"/> | <br/>
+question: <bot name="question"/> | <br/>
+religion: <bot name="religion"/> | <br/>
+richness: <bot name="richness"/> | <br/>
+sign: <bot name="sign"/> | <br/>
+size: <bot name="size"/> | <br/>  
+species: <bot name="species"/> | <br/>
+state: <bot name="state"/> | <br/>
+talkabout: <bot name="talkabout"/> | <br/>
+totalclients: <bot name="totalclients"/> | <br/>
+version: <bot name="version"/> | <br/>
+vocabulary: <bot name="vocabulary"/> | <br/>
+wear: <bot name="wear"/> | <br/>   
+website: <bot name="website"/> | <br/>
 </template>
 </category>
 

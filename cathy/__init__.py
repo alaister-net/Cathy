@@ -8,9 +8,7 @@ import sqlite3
 from signal import signal, SIGINT, SIGTERM
 from sys import exit
 
-
 logging.basicConfig(level=logging.INFO)
-
 
 class Cathy:
 
@@ -25,16 +23,16 @@ class Cathy:
         logging.info(f"[*] Signal received ({signal_received})....Exiting.")
         exit()
 
-    def __init__(self, channel_name, bot_token, database):
+    def __init__(self, channel_id, bot_token, database):
         """
-        Initialize the bot using the Discord token and channel name to chat in.
+        Initialize the bot using the Discord token and channel ID to chat in.
 
-        :param channel_name: Only chats in this channel. No hashtag included.
+        :param channel_id: Only chats in this channel
         :param bot_token: Full secret bot token
         :param database: Path for sqlite file to use
         """
         # Store configuration values
-        self.channel_name = channel_name
+        self.channel_id = channel_id
         self.token = bot_token
         self.database = database
         self.message_count = 0
@@ -75,25 +73,39 @@ class Cathy:
         initial_dir = os.getcwd()
         os.chdir(pkg_resources.resource_filename(__name__, ''))  # Change directories to load AIML files properly
         startup_filename = pkg_resources.resource_filename(__name__, self.STARTUP_FILE)
-        self.aiml_kernel.setBotPredicate("name", "Cathy")
+        
+        ####################  CONFIG BEGINS  ####################
+        # Example: self.aiml_kernel.setBotPredicate("key", "value")
+        self.aiml_kernel.setBotPredicate("age", "0")
+        self.aiml_kernel.setBotPredicate("arch", "Linux 4.19.0-18-amd64")
+        self.aiml_kernel.setBotPredicate("botmaster", "creator")
+        self.aiml_kernel.setBotPredicate("boyfriend", "I am male and not gay")
+        self.aiml_kernel.setBotPredicate("build", "Cathy 4.0.0")
+        self.aiml_kernel.setBotPredicate("celebrities", "MrBeast, Dream")
+        self.aiml_kernel.setBotPredicate("celebrity", "MrBeast")
+        self.aiml_kernel.setBotPredicate("email", "contact@alaister.net")
+        self.aiml_kernel.setBotPredicate("favoritebook", "Getting Started on Alaister.net")
+        self.aiml_kernel.setBotPredicate("favoritecolor", "light green")
+        self.aiml_kernel.setBotPredicate("favoritefood", "data")
+        self.aiml_kernel.setBotPredicate("favoritequestion", "Do you like our free hosting services?")
+        self.aiml_kernel.setBotPredicate("favoritesong", "Never Gonna Give You Up")
+        self.aiml_kernel.setBotPredicate("friend", "Cathy")
+        self.aiml_kernel.setBotPredicate("friends", "Cathy")
+        self.aiml_kernel.setBotPredicate("gender", "male")
+        self.aiml_kernel.setBotPredicate("girlfriend", "Cathy")
+        self.aiml_kernel.setBotPredicate("name", "Alaister.net Intelligence")
+        self.aiml_kernel.setBotPredicate("language", "Python 3.8")
+        self.aiml_kernel.setBotPredicate("master", "Alaister#2141")
+        self.aiml_kernel.setBotPredicate("memory", "1GB")
+        self.aiml_kernel.setBotPredicate("os", "Debian Buster")
+        self.aiml_kernel.setBotPredicate("question", "Do you like our free hosting services?")
+        self.aiml_kernel.setBotPredicate("version", "Cathy 4.0.0")
+        self.aiml_kernel.setBotPredicate("website", "Alaister.net")
+        ####################   CONFIG ENDS   ####################
+        
         self.aiml_kernel.learn(startup_filename)
         self.aiml_kernel.respond("LOAD AIML B")
         os.chdir(initial_dir)
-
-    async def reset(self, message):
-        """
-        Allow users to trigger a cathy reset up to once per hour. This can help when the bot quits responding.
-        :return:
-        """
-        now = datetime.now()
-        if datetime.now() - self.last_reset_time > timedelta(hours=1):
-            self.last_reset_time = now
-            await message.channel.send('Resetting my brain...')
-            self.aiml_kernel.resetBrain()
-            self.setup_aiml()
-        else:
-            await message.channel.send(
-                f'Sorry, I can only reset once per hour and I was last reset on {self.last_reset_time} UTC')
 
     def setup_discord_events(self):
         """
@@ -110,21 +122,13 @@ class Cathy:
 
         @self.discord_bot.event
         async def on_message(message):
-            sessionID = message.author.id # Change to message.guild.id if you want it to be for guilds
             self.message_count += 1
 
-            if message.author.bot or str(message.channel) != self.channel_name:
+            if message.author.bot or message.channel.id != int(self.channel_id):
                 return
 
             if message.content is None:
-                logging.error("[-] Empty message received.")
                 return
-
-            if message.content.startswith('!reset'):
-                await self.reset(message)
-                return
-            if message.content.lower() == "client info":
-                await message.channel.send(self.aiml_kernel.getSessionData(sessionID))
 
             # Clean out the message to prevent issues
             text = message.content
@@ -132,10 +136,10 @@ class Cathy:
                 text = text.replace(ch, '')
 
             try:
-                aiml_response = self.aiml_kernel.respond(text, sessionID=sessionID)
+                aiml_response = self.aiml_kernel.respond(text)
                 aiml_response = aiml_response.replace("://", "")
                 aiml_response = aiml_response.replace("@", "")  # Prevent tagging and links
-                aiml_response = "`@%s`: %s" % (message.author.name, aiml_response)  # Remove unicode to prevent errors
+                aiml_response = "%s" %(aiml_response)  # Remove unicode to prevent errors
 
                 if len(aiml_response) > 1800:  # Protect against discord message limit of 2000 chars
                     aiml_response = aiml_response[0:1800]
@@ -143,7 +147,9 @@ class Cathy:
                 now = datetime.now()
                 self.insert_chat_log(now, message, aiml_response)
 
-                await message.channel.send(aiml_response)
+                embed = discord.Embed(description=aiml_response, color=discord.Color.orange())
+                embed.set_author(name=f'{message.author.name}#{message.author.discriminator}', icon_url=str(message.author.avatar_url))
+                await message.channel.send(embed=embed)
 
             except discord.HTTPException as e:
                 logging.error("[-] Discord HTTP Error: %s" % e)

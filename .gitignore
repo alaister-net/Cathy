@@ -107,3 +107,6 @@ ENV/
 *.db
 *.log
 .DS_Store
+
+# Cathy
+cathy.db
