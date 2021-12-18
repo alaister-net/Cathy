@@ -147,9 +147,7 @@ class Cathy:
                 now = datetime.now()
                 self.insert_chat_log(now, message, aiml_response)
 
-                embed = disnake.Embed(description=aiml_response, color=disnake.Color.orange())
-                embed.set_author(name=f'{message.author.name}#{message.author.discriminator}', icon_url=message.author.display_avatar.url)
-                await message.channel.send(embed=embed)
+                await message.reply(aiml_response)
 
             except disnake.HTTPException as e:
                 logging.error("[-] Discord HTTP Error: %s" % e)
