@@ -8,7 +8,7 @@ import sqlite3
 from signal import signal, SIGINT, SIGTERM
 from sys import exit
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename='/var/log/cathy.log', encoding='utf-8', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(name)s: %(message)s')
 
 class Cathy:
 
